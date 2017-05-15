@@ -1,6 +1,6 @@
 var fs = require('fs'),
-  htmlWriter = require('./htmlWriter'),
-  markdownWriter = require('./markdownWriter');
+  htmlWriter = require('./utils/htmlWriter'),
+  markdownWriter = require('./utils/markdownWriter');
 
 var documenter = {
   errors: [],
