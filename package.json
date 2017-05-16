@@ -4,7 +4,7 @@
   "description": "Create automatic documentation of your NodeJS API endpoints",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha test/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/wolox/dictum.js/issues"
   },
-  "homepage": "https://github.com/wolox/dictum.js#readme"
+  "homepage": "https://github.com/wolox/dictum.js#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "mocha": "^3.4.1",
+    "rimraf": "^2.6.1"
+  }
 }
