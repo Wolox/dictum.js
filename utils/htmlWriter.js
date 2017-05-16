@@ -61,7 +61,7 @@ function writeResourceHtml (resource, endpoints) {
 }
 
 function writeEndpointHtml (endpoint) {
-  var cssEndpoint = endpoint.endpoint.split('/').join('-');
+  var cssEndpoint = endpoint.endpoint.split('/').concat(endpoint.method).join('-');
   return htmlHelpers.wrapInDiv(
     htmlHelpers.wrapInDivWithProps(
       htmlHelpers.wrapInSubtitle(
