@@ -1,6 +1,6 @@
 # Dictum.js
 
-##### Create automatic documentation of your NodeJS API endpoints.
+Create automatic documentation of your NodeJS API endpoints.
 
 ## Installation
 
@@ -68,7 +68,6 @@ describe('/some/endpoint GET', () => {
     });
 });
 ```
-
 See the important line here:
 
 ```node
@@ -113,7 +112,6 @@ This project is maintained by [Michel Agopian](https://github.com/mishuagopian) 
 ![Wolox](https://raw.githubusercontent.com/Wolox/press-kit/master/logos/logo_banner.png)
 
 ## License
-
 
 **dictum.js** is available under the MIT [license](https://raw.githubusercontent.com/Wolox/dictum.js/master/LICENSE.md).
 
