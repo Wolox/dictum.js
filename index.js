@@ -19,10 +19,11 @@ function getFormatter () {
 }
 
 exports.setFormatter = function (formatter) {
-  if (!formatters[formatter]) {
-    // throw exception
+  if (!formatters[formatter.toLowerCase()]) {
+    return false;
   }
-  documenter.formatter = formatter;
+  documenter.formatter = formatter.toLowerCase();
+  return documenter.formatter;
 };
 
 exports.document = function (data) {
