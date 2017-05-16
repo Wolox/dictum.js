@@ -77,6 +77,8 @@ dictum.chai(res, 'description for endpoint');
 
 Using `chai` returned `res` object will supply all the information we need to address the given endpoint. Optionally, we can provide a second parameter containing a description for it.
 
+Then, documentation will be created when running our tests.
+
 ## Some other useful configurations
 
 #### Markdown syntax instead of HTML? Change the formatter:
