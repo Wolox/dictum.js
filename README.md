@@ -87,6 +87,16 @@ Then, documentation will be created when running our tests.
 dictum.setFormatter('markdown'); // default: 'html'
 ```
 
+#### Publishing docs when using Express? Add:
+
+```node
+var express = require('express'),
+  path = require('path'),
+  app = express();
+
+app.use('/docs', express.static(path.join(__dirname, 'docs')));
+```
+
 ## Contributing
 
 1. Fork it
