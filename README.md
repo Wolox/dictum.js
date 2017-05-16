@@ -52,7 +52,7 @@ If you pay attention to the basic usage, you will notice that it is a lot of boi
 
 ```node
 const chai = require('chai'),
-  documenter = require('dictum.js'),
+  dictum = require('dictum.js'),
   server = require('./../app'),
   should = chai.should();
 
