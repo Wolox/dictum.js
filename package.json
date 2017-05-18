@@ -2,6 +2,9 @@
   "name": "dictum.js",
   "version": "1.0.2",
   "description": "Create automatic documentation of your NodeJS API endpoints",
+  "engines" : {
+    "node" : "*"
+  },
   "main": "lib/index.js",
   "scripts": {
     "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
