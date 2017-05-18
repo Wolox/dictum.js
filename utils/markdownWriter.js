@@ -1,68 +1,74 @@
 var fs = require('fs');
 
 exports.generate = function (data) {
+  var data = exports.generateData(data);
+  if (data) {
+    fs.writeFileSync('./docs/docs.md', data);
+  }
+};
+
+exports.generateData = function (data) {
   var resources = data.resources;
+  var data = [];
+
   if (resources) {
     var resourcesKeys = Object.keys(resources);
-    var data = [];
 
     resourcesKeys.forEach(function (resourceKey) {
       var endpoints = resources[resourceKey].endpoints;
 
-      data.push(resourceMarkdown(resourceKey));
+      data.push(exports.resourceMarkdown(resourceKey));
 
       endpoints.forEach(function (endpoint) {
-        data.push(endpointMarkdown(endpoint.method, endpoint.endpoint));
-        data.push(endpointDescriptionMarkdown(endpoint.description));
+        data.push(exports.endpointMarkdown(endpoint.method, endpoint.endpoint));
+        data.push(exports.endpointDescriptionMarkdown(endpoint.description));
 
-        data.push(dataTitleMarkdown('Request data'));
-        data.push(titleJsonMarkdown('Headers', endpoint.requestHeaders));
-        data.push(titleJsonMarkdown('Body', endpoint.requestBodyParams));
+        data.push(exports.dataTitleMarkdown('Request data'));
+        data.push(exports.titleJsonMarkdown('Headers', endpoint.requestHeaders));
+        data.push(exports.titleJsonMarkdown('Body', endpoint.requestBodyParams));
 
-        data.push(dataTitleMarkdown('Response data'));
-        data.push(dataSubtitleMarkdown('Status: ' + endpoint.responseStatus));
-        data.push(titleJsonMarkdown('Headers', endpoint.responseHeaders));
-        data.push(titleJsonMarkdown('Body', endpoint.responseBody));
+        data.push(exports.dataTitleMarkdown('Response data'));
+        data.push(exports.dataSubtitleMarkdown('Status: ' + endpoint.responseStatus));
+        data.push(exports.titleJsonMarkdown('Headers', endpoint.responseHeaders));
+        data.push(exports.titleJsonMarkdown('Body', endpoint.responseBody));
       });
     });
-
-    fs.writeFileSync('./docs/docs.md', data.join(''));
   }
+
+  return data.join('');
 };
 
-function resourceMarkdown (resource) {
-  return '# ' + resource[0].toUpperCase() + resource.substring(1) + '\n';
+exports.resourceMarkdown = function (resource) {
+  return resource ? '# ' + capitalize(resource) + '\n' : '';
 }
 
-function endpointMarkdown (method, endpoint) {
-  if (method && endpoint) {
-    return '## ' + method + ' ' + endpoint + '\n';
-  }
-  return '';
+exports.endpointMarkdown = function (method, endpoint) {
+  return method && endpoint ? '## ' + method.toUpperCase() + ' ' + endpoint + '\n' : '';
 }
 
-function endpointDescriptionMarkdown (desc) {
-  if (desc) {
-    return desc + '\n';
-  }
-  return '';
+exports.endpointDescriptionMarkdown = function (desc) {
+  return desc ? desc + '\n' : '';
 }
 
-function dataTitleMarkdown (title) {
-  return '### ' + title + '\n';
+exports.dataTitleMarkdown = function (title) {
+  return title ? '### ' + capitalize(title) + '\n' : '';
 }
 
-function dataSubtitleMarkdown (title) {
-  return '#### ' + title + '\n';
+exports.dataSubtitleMarkdown = function (subtitle) {
+  return subtitle ? '#### ' + capitalize(subtitle) + '\n' : '';
 }
 
-function jsonMarkdown (json) {
-  return '```json\n' + JSON.stringify(json, null, 2) + '\n```\n';
+exports.jsonMarkdown = function (json) {
+  return json ? '```json\n' + JSON.stringify(json, null, 2) + '\n```\n' : '';
 }
 
-function titleJsonMarkdown (title, json) {
+exports.titleJsonMarkdown = function (title, json) {
   if (title && Object.keys(json || {}).length) {
-    return dataSubtitleMarkdown(title) + jsonMarkdown(json);
+    return exports.dataSubtitleMarkdown(title) + exports.jsonMarkdown(json);
   }
   return '';
+}
+
+function capitalize(text) {
+  return text ? text[0].toUpperCase() + text.substring(1) : '';
 }
