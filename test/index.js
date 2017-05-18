@@ -17,5 +17,5 @@ beforeEach(function (done) {
 // include all test files
 var normalizedPath = path.join(__dirname, '.');
 fs.readdirSync(normalizedPath).forEach(function (file) {
-  require(`./${file}`);
+  require('./' + file);
 });
