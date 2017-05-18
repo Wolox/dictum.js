@@ -1,4 +1,6 @@
 # Dictum.js
+[![Build Status](https://travis-ci.org/Wolox/dictum.js.svg)](https://travis-ci.org/Wolox/dictum.js)
+[![Coverage Status](https://coveralls.io/repos/Wolox/dictum.js/badge.svg?branch=master)](https://coveralls.io/r/Wolox/dictum.js?branch=master)
 
 Create automatic documentation of your NodeJS API endpoints.
 
