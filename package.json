@@ -4,7 +4,9 @@
   "description": "Create automatic documentation of your NodeJS API endpoints",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "test": "./node_modules/.bin/_mocha test/index.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +24,13 @@
   "bugs": {
     "url": "https://github.com/wolox/dictum.js/issues"
   },
-  "homepage": "https://github.com/wolox/dictum.js#readme"
+  "homepage": "https://github.com/wolox/dictum.js#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-spies": "^0.7.1",
+    "coveralls": "^2.13.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.4.1",
+    "rimraf": "^2.6.1"
+  }
 }

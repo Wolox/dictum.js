@@ -1,4 +1,6 @@
 # Dictum.js
+[![Build Status](https://travis-ci.org/Wolox/dictum.js.svg)](https://travis-ci.org/Wolox/dictum.js)
+[![Coverage Status](https://coveralls.io/repos/Wolox/dictum.js/badge.svg?branch=master)](https://coveralls.io/r/Wolox/dictum.js?branch=master)
 
 Create automatic documentation of your NodeJS API endpoints.
 
@@ -101,7 +103,7 @@ app.use('/docs', express.static(path.join(__dirname, 'docs')));
 1. Fork it
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
-5. Run tests (`npm run test`)
+5. Run tests (`npm test`)
 6. Push your branch (`git push origin my-new-feature`)
 7. Create a new Pull Request
 
