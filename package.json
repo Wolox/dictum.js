@@ -4,7 +4,8 @@
   "description": "Create automatic documentation of your NodeJS API endpoints",
   "main": "lib/index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/index.js"
+    "coverage": "./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+    "test": "./node_modules/.bin/_mocha test/index.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "chai-spies": "^0.7.1",
+    "istanbul": "^0.4.5",
     "mocha": "^3.4.1",
     "rimraf": "^2.6.1"
   }

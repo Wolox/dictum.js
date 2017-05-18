@@ -1,7 +1,10 @@
 var fs = require('fs'),
   chai = require('chai'),
+  spies = require('chai-spies')
   expect = chai.expect,
   dictum = require('./../index');
+
+chai.use(spies);
 
 var docsPath = './docs';
 var resourceOne = { endpoint: '/resourceOne/one', method: 'GET', resource: 'resourceOne' };
