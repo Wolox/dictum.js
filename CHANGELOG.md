@@ -1,6 +1,12 @@
 
 ## Change log
 
+### [1.0.2]
+
+#### Added
+
+- Tests for files creation, html and markdown helpers.
+
 ### [1.0.1]
 
 #### Changed
