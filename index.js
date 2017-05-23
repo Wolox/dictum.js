@@ -28,7 +28,7 @@ exports.setFormatter = function (formatter) {
 
 exports.document = function (data) {
   var endpoint = data.endpoint,
-    resource = data.resource;
+    resource = data.resource.split('?')[0];
 
   if (resource && endpoint) {
     documenter.resources[resource] = documenter.resources[resource] || {};
