@@ -1,4 +1,5 @@
 var fs = require('fs'),
+  rimraf = require('rimraf'),
   htmlWriter = require('./utils/htmlWriter'),
   markdownWriter = require('./utils/markdownWriter');
 
@@ -44,10 +45,8 @@ exports.document = function (data) {
       responseBody: data.responseBody
     });
 
-    if (!fs.existsSync(documenter.path)) {
-      fs.mkdirSync(documenter.path);
-    }
-
+    rimraf.sync(documenter.path);
+    fs.mkdirSync(documenter.path);
     getFormatter().generate(documenter);
   }
 }

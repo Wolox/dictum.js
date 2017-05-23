@@ -1,6 +1,12 @@
 
 ## Change log
 
+### [1.0.4]
+
+#### Added
+
+- Docs folder deletion before documenting.
+
 ### [1.0.3]
 
 #### Added
