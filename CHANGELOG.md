@@ -1,6 +1,13 @@
 
 ## Change log
 
+### [1.0.3]
+
+#### Added
+
+- Query params deletion from resource name.
+- Query params deletion from endpoint css when creating CSS endpoint class.
+
 ### [1.0.2]
 
 #### Added
