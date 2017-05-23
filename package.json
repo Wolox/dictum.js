@@ -1,9 +1,9 @@
 {
   "name": "dictum.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Create automatic documentation of your NodeJS API endpoints",
-  "engines" : {
-    "node" : "*"
+  "engines": {
+    "node": "*"
   },
   "main": "lib/index.js",
   "scripts": {
