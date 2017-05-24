@@ -1,6 +1,6 @@
 {
   "name": "dictum.js",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Create automatic documentation of your NodeJS API endpoints",
   "engines": {
     "node": "*"
