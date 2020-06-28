@@ -78,6 +78,11 @@ function writeEndpointHtml (endpoint) {
     ) +
     htmlHelpers.wrapInDivWithProps(
       htmlHelpers.wrapInDiv(
+        htmlHelpers.wrapInSubtitle('Description') +
+        htmlHelpers.wrapInSubtitleTitle(endpoint.description),
+        'container'
+      ) +
+      htmlHelpers.wrapInDiv(
         htmlHelpers.wrapInSubtitle('Request Data') +
         htmlHelpers.wrapInDiv(
           htmlHelpers.subtitlePreWrapper('Headers', endpoint.requestHeaders) +
