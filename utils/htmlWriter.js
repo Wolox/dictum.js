@@ -77,11 +77,13 @@ function writeEndpointHtml (endpoint) {
       'class="panel-heading" role="tab" id="heading' + cssEndpoint + '"'
     ) +
     htmlHelpers.wrapInDivWithProps(
-      htmlHelpers.wrapInDiv(
-        htmlHelpers.wrapInSubtitle('Description') +
-        htmlHelpers.wrapInSubtitleTitle(endpoint.description),
-        'container'
-      ) +
+      (endpoint.description
+        ? htmlHelpers.wrapInDiv(
+          htmlHelpers.wrapInSubtitle('Description') +
+          htmlHelpers.wrapInSubtitleTitle(endpoint.description),
+          'panel-body'
+        )
+        : '') +
       htmlHelpers.wrapInDiv(
         htmlHelpers.wrapInSubtitle('Request Data') +
         htmlHelpers.wrapInDiv(
